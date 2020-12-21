@@ -3,6 +3,21 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://allen-hu.github.io/posts/</loc>
+    <lastmod>2020-12-21T21:25:47+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://allen-hu.github.io/</loc>
+    <lastmod>2020-12-21T21:25:47+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://allen-hu.github.io/posts/1_new_site/</loc>
+    <lastmod>2020-12-21T21:25:47+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://allen-hu.github.io/archives/</loc>
   </url>
   
@@ -16,10 +31,6 @@
   
   <url>
     <loc>https://allen-hu.github.io/tags/</loc>
-  </url>
-  
-  <url>
-    <loc>https://allen-hu.github.io/</loc>
   </url>
   
 </urlset>

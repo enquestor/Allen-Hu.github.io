@@ -4,7 +4,17 @@
     <title>Yagami 幹話語錄</title>
     <link>https://allen-hu.github.io/</link>
     <description>Recent content on Yagami 幹話語錄</description>
-    <generator>Hugo -- gohugo.io</generator><atom:link href="https://allen-hu.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 21 Dec 2020 21:25:47 +0800</lastBuildDate><atom:link href="https://allen-hu.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>新網站</title>
+      <link>https://allen-hu.github.io/posts/1_new_site/</link>
+      <pubDate>Mon, 21 Dec 2020 21:25:47 +0800</pubDate>
+      
+      <guid>https://allen-hu.github.io/posts/1_new_site/</guid>
+      <description>耶我好棒</description>
+    </item>
+    
     <item>
       <title>Archive</title>
       <link>https://allen-hu.github.io/archives/</link>
