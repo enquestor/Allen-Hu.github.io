@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Yagami 幹話語錄</title>
+    <title>分類 on Yagami 幹話語錄</title>
     <link>https://allen-hu.github.io/tags/</link>
-    <description>Recent content in Tags on Yagami 幹話語錄</description>
-    <generator>Hugo -- gohugo.io</generator><atom:link href="https://allen-hu.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <description>Recent content in 分類 on Yagami 幹話語錄</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 01 Jan 2021 00:00:00 +0800</lastBuildDate><atom:link href="https://allen-hu.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>心情雜談</title>
+      <link>https://allen-hu.github.io/tags/%E5%BF%83%E6%83%85%E9%9B%9C%E8%AB%87/</link>
+      <pubDate>Fri, 01 Jan 2021 00:00:00 +0800</pubDate>
+      
+      <guid>https://allen-hu.github.io/tags/%E5%BF%83%E6%83%85%E9%9B%9C%E8%AB%87/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

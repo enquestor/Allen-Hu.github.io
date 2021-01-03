@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>心情雜談 on Yagami 幹話語錄</title>
+    <link>https://allen-hu.github.io/tags/%E5%BF%83%E6%83%85%E9%9B%9C%E8%AB%87/</link>
+    <description>Recent content in 心情雜談 on Yagami 幹話語錄</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 01 Jan 2021 00:00:00 +0800</lastBuildDate><atom:link href="https://allen-hu.github.io/tags/%E5%BF%83%E6%83%85%E9%9B%9C%E8%AB%87/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>新網站</title>
+      <link>https://allen-hu.github.io/posts/1_new_site/</link>
+      <pubDate>Fri, 01 Jan 2021 00:00:00 +0800</pubDate>
+      
+      <guid>https://allen-hu.github.io/posts/1_new_site/</guid>
+      <description>新的一年，新的網站。
+一直以來都是用臉書在記錄我的一些心情雜談、長文、日記等，不過總覺得歸納起來不是很方便，要看過去的文章也是個問題。腦中一閃而過，想說身為一個資訊人，有個自己的網站也是挺不賴的。於是，聽著演算法老師嘮叨著紅黑樹怎麼插入，這網站就這麼誕生了。
+本來考慮用 Wordpress 配上任意免空，但實在是懶得去找一個 reliable 又不用錢的空間，也用不到 Wordpress 很多功能，就聽了曲線的建議，在 hugo 跟 hexo 間選了 hugo 架在 github 上。
+在 OS 期末考跟微處理機期末 Project、R 語言作業、編譯器作業跟托福的炎燒下，就不說太多了。關於我的部分，也就等 1/16 忙完營隊後再說吧。</description>
+    </item>
+    
+  </channel>
+</rss>
