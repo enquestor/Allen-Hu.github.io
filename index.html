@@ -132,10 +132,10 @@
 
 <article class="first-entry home-info">
     <header class="entry-header">
-        <h2>Yagami 幹話語錄 💩</h2>
+        <h2>You are what You Believe.</h2>
     </header>
     <section class="entry-content">
-        <p>主要放一些生活日誌，偶爾可能會寫些技術文章或時事心得</p>
+        <p>&ndash; 相信自己很強，你就真的會很強。</p>
     </section>
     <footer class="entry-footer"><div class="social-icons"><a href="https://www.facebook.com/allen0hu/" target="_blank" rel="noopener noreferrer me"
         title="Facebook"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -172,12 +172,12 @@
 這邊問題倒是很明確，我會如此定義：「學校 QS 排名與退學人數是否有相關性」
 這裡最大的問題是，退學人數與壓力大倒也不是直接相關。或許有些人因為不想退學，因此加倍努力導致壓力更大。於是索性直接做排名跟退學人數的相關性了 XD
 分析過程 Pre-Process load 需要用到的 package
-library(ggplot2) library(dplyr) 整理學校排名的 dataframe
+library(ggplot2) library(dplyr) 整理學校排名的 data.frame
 # School Ranking ranked_schools &lt;- read.csv(&#34;ranking.csv&#34;) ranked_schools_process &lt;- function(ranked_schools) { # format rank number ranked_schools[&#34;rank&#34;] &lt;- lapply(ranked_schools[&#34;rank&#34;], function(x) as.numeric((regmatches(x,regexpr(&#34;[0-9]*$&#34;, x))))) # format school name ranked_schools[&#34;title&#34;] &lt;- c(&#34;國立臺灣大學&#34;, &#34;國立清華大學&#34;, &#34;國立成功大學&#34;, &#34;國立交通大學&#34;, &#34;國立臺灣科技大學&#34;, &#34;國立陽明大學&#34;, &#34;國立臺灣師範大學&#34;, &#34;臺北醫學大學&#34;, &#34;國立中山大學&#34;, &#34;國立中央大學&#34;, &#34;國立臺北科技大學&#34;, &#34;長庚大學&#34;, &#34;國立政治大學&#34;, &#34;國立中興大學&#34;, &#34;高雄醫學大學&#34;, &#34;國立中正大學&#34;) # remove unused column ranked_schools[&#34;detailPage&#34;] &lt;- NULL ranked_schools } # pre-process ranked_schools ranked_schools &lt;- ranked_schools_process(ranked_schools) 整理退學資料：...</p>
   </section>
   <footer class="entry-footer">
 
-January 3, 2021&nbsp;·&nbsp;3 分鐘&nbsp;·&nbsp;Yagami
+January 3, 2021&nbsp;·&nbsp;4 分鐘&nbsp;·&nbsp;Yagami
 </footer>
   <a class="entry-link" aria-label="post link to 為什麼我不做資料分析師" href="https://yagami.dev/posts/2_why_not_data_analyst/"></a>
 </article>
