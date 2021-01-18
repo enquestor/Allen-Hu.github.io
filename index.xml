@@ -7,6 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sun, 03 Jan 2021 13:00:15 +0800</lastBuildDate><atom:link href="https://yagami.dev/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>關於我</title>
+      <link>https://yagami.dev/about/</link>
+      <pubDate>Mon, 18 Jan 2021 00:00:00 +0800</pubDate>
+      
+      <guid>https://yagami.dev/about/</guid>
+      <description>學歷 大學   本系：交通大學資訊管理與財務金融學系資訊管理組
+  雙主修：交通大學資訊工程學系資訊工程組
+  高中  台北市立成功高級中學  語言 英文  托福 iBT： 106 (2021) 雅思 IELTS：7.0 (2018) 多益 TOEIC：910 (2017) 全民 GEPT：中高級 (2012)  日文  日檢 JLPT：N2 (2019)  興趣 創意發想 解決問題，用最少的力氣完成最多事情。
+鋼琴 最喜歡的曲子：Chopin Ballade 1
+音遊  Dynamix：全曲 X Arcaea：PTT 12.0  動畫/漫畫  漫畫首推：龍馬的雅號、魂環 動畫首推：搖曳露營  運動 打桌球
+程式  主寫：Flutter 略懂：C/C++、Kotlin、Python、HTML、CSS、JS 正在學習：Tensorflow、Fuzzing  </description>
+    </item>
+    
+    <item>
       <title>為什麼我不做資料分析師</title>
       <link>https://yagami.dev/posts/2_why_not_data_analyst/</link>
       <pubDate>Sun, 03 Jan 2021 13:00:15 +0800</pubDate>
@@ -52,15 +66,6 @@ library(ggplot2) library(dplyr) 整理學校排名的 data.frame
       
       <guid>https://yagami.dev/archives/</guid>
       <description>archives</description>
-    </item>
-    
-    <item>
-      <title>關於我</title>
-      <link>https://yagami.dev/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://yagami.dev/about/</guid>
-      <description></description>
     </item>
     
   </channel>

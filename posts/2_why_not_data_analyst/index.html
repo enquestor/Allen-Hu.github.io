@@ -7,7 +7,7 @@
 <meta name="robots" content="index, follow">
 <title>為什麼我不做資料分析師 | Yagami 幹話語錄</title>
 
-<meta name="keywords" content="心情雜談, 技術筆記" />
+<meta name="keywords" content="技術筆記" />
 <meta name="description" content="所以說，我以後絕對不做資料分析師。
 前情提要 這學期 R 語言期末 Project 本來想做「清交二手拍盤子價與市場價格差距比例和被噴的次數是否程正相關」，但由於實在是懶得用一個不習慣的語言寫抓 Facebook 留言 &#43; 爬市場價格的 code，最後還是放棄了。
 去了政府的 開放資料網站 逛了逛資料集，各校退學人數 吸引了我的注意。
@@ -69,7 +69,7 @@ library(ggplot2) library(dplyr) 整理學校排名的 data.frame
   "name": "為什麼我不做資料分析師",
   "description": "所以說，我以後絕對不做資料分析師。\n前情提要 這學期 R 語言期末 Project 本來想做「清交二手拍盤子價與市場價格差距比例和被噴的次數是否程正相關」，但由於實在是懶得用一個不習慣的語言寫抓 Facebook 留言 + 爬市場價格的 code，最後還是放棄了。\n去了政府的 開放資料網站 逛了逛資料集，各校退學人數 吸引了我的注意。\n剛好前不久遇到了台大5 …",
   "keywords": [
-    "心情雜談", "技術筆記"
+    "技術筆記"
   ],
   "articleBody": "所以說，我以後絕對不做資料分析師。\n前情提要 這學期 R 語言期末 Project 本來想做「清交二手拍盤子價與市場價格差距比例和被噴的次數是否程正相關」，但由於實在是懶得用一個不習慣的語言寫抓 Facebook 留言 + 爬市場價格的 code，最後還是放棄了。\n去了政府的 開放資料網站 逛了逛資料集，各校退學人數 吸引了我的注意。\n剛好前不久遇到了台大5天3自殺的案件，想到常在 Facebook 上看到文章談論頂大學生壓力大的問題，於是決定用退學資料做分析。\n定義問題 在做資料分析時，非常重要的一點是定義問題。\n這邊問題倒是很明確，我會如此定義：「學校 QS 排名與退學人數是否有相關性」\n這裡最大的問題是，退學人數與壓力大倒也不是直接相關。或許有些人因為不想退學，因此加倍努力導致壓力更大。於是索性直接做排名跟退學人數的相關性了 XD\n分析過程 Pre-Process load 需要用到的 package\nlibrary(ggplot2) library(dplyr) 整理學校排名的 data.frame\n# School Ranking ranked_schools 整理退學資料：\n 刪掉沒有資料的 column 20 跟 21 把 string 轉成 numeric 把 退學人數小計 加到 在學學生數 裡面，因為 在學學生數 是不包含 退學人數小計 中已經退學的人數，導致之後在算退學 % 數時會有除以 0 的情況 做完 3 之後如果 在學學生數 還是 0 就把這個沒用的資料拿掉  # Suspend suspend Utilities 接著定義一些協助我們篩選跟處理資料的 function\n首先是 suspend_filter()，用來篩選資料：\nsuspend_filter 這樣用 dlpyr 的 %% (pipe) 運算子我們就能很方便地做多條件篩選。比如我們想篩選出 一般大學 - 學士班 - 日間部，我們就可以用以下寫法：\nselected % suspend_filter(\"college\") %% suspend_filter(\"bachelor\") %% suspend_filter(\"day\") 接著是 suspend_clean()，用來把資料刪到剩下做圖需要的欄位、計算退學百分比與合併男女。\nsuspend_clean % group_by(學校名稱) %% summarise(total = sum(在學學生數), target = sum(eval(as.name(target)))) suspend$name Visualization 接著就可以開始畫圖了。\n QS 排名與退學率之關係  篩選資料：「前段班」\nselected % suspend_filter(\"ranked\") %% suspend_clean(\"退學人數小計\") selected 繪製散佈圖\nggplot(selected, aes(rank, rate)) + geom_jitter() 這樣好像看不太出什麼趨勢。\n做個 Regression 試試好了：\nggplot(selected, aes(rank, rate)) + geom_jitter() + geom_smooth(method = \"lm\") 好像有個趨勢，但不對，不是應該排名比較前面壓力比較大 - 退學率比較高嗎？\n因為台清交成有許多在職專班，壓力比較小？\n大學部  篩選資料：\n 「前段班」 大學部  selected % suspend_filter(\"ranked\") %% suspend_filter(\"bachelor\") %% suspend_clean(\"退學人數小計\") selected 太棒了，趨勢正在消失。\n我們再把範圍縮小到只有日間部的學生試試。\n日間部  篩選資料：\n 「前段班」 大學部 日間部  selected % suspend_filter(\"ranked\") %% suspend_filter(\"bachelor\") %% suspend_filter(\"day\") %% suspend_clean(\"退學人數小計\") selected 這樣看下來，幾乎沒有趨勢了。學校排名根本與退學率無關，什麼台大學生壓力大都是假的。\n我們不妨換個角度看看：退學原因。\n因為學業成績而退學的人  篩選資料：\n 「前段班」 大學部  這次我們從「退學人數小計」改為觀察「因學業成績退學人數」。\nselected % suspend_filter(\"ranked\") %% suspend_filter(\"bachelor\") %% suspend_clean(\"因學業成績退學人數\") selected 可以觀察到，雖然有下降的趨勢，但仍然非常不明顯。而關鍵的台大也不太符合趨勢。\n退學原因比例  selected % group_by(type) %% summarise_at(11:20, sum) selected 有 QS 排名 vs 沒 QS 排名  selected % group_by(type) %% summarise_at(11:20, sum) selected 結論 我認為結果不明顯有以下三個原因：\n 樣本大小  由於上 QS 排名的台灣大學也就16間，或許由於樣本數太少，無法觀察到明顯趨勢。\n校園風氣  雖然壓力大有可能導致退學，但或許有些學生會因同儕競爭關係，硬撐著不退學，導致在壓力大的環境下仍然持續就學。白話來說，或許壓力大跟退學沒什麼關係。\n確實無關  或許退學率與 QS 排名確實無關。\n後記 上了大學有幾次做資料分析的機會。多數是在為 Deep Learning 做資料前處理，很少有像這樣單純把資料視覺化後找出關係的機會。\n我一直都很討厭不明確的事情。資料分析就是如此，雖然確實會定義一個問題並從資料中找出相關規律，但尋找規律的過程幾乎是漫無目的的。\n所以說，我以後絕對不做資料分析師。\n",
   "wordCount" : "767",
@@ -455,7 +455,6 @@ ggplot(selected, aes(x = type, y = count, fill = reason)) +
 </div>
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://yagami.dev/tags/%E5%BF%83%E6%83%85%E9%9B%9C%E8%AB%87/">心情雜談</a></li>
       <li><a href="https://yagami.dev/tags/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/">技術筆記</a></li>
     </ul>
 
@@ -466,7 +465,7 @@ ggplot(selected, aes(x = type, y = count, fill = reason)) +
 
 <div class="share-buttons">
     <a target="_blank" rel="noopener noreferrer" aria-label="share 為什麼我不做資料分析師 on twitter"
-        href="https://twitter.com/intent/tweet/?text=%e7%82%ba%e4%bb%80%e9%ba%bc%e6%88%91%e4%b8%8d%e5%81%9a%e8%b3%87%e6%96%99%e5%88%86%e6%9e%90%e5%b8%ab&amp;url=https%3a%2f%2fyagami.dev%2fposts%2f2_why_not_data_analyst%2f&amp;hashtags=%e5%bf%83%e6%83%85%e9%9b%9c%e8%ab%87%2c%e6%8a%80%e8%a1%93%e7%ad%86%e8%a8%98">
+        href="https://twitter.com/intent/tweet/?text=%e7%82%ba%e4%bb%80%e9%ba%bc%e6%88%91%e4%b8%8d%e5%81%9a%e8%b3%87%e6%96%99%e5%88%86%e6%9e%90%e5%b8%ab&amp;url=https%3a%2f%2fyagami.dev%2fposts%2f2_why_not_data_analyst%2f&amp;hashtags=%e6%8a%80%e8%a1%93%e7%ad%86%e8%a8%98">
         <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve">
             <path
                 d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-253.927,424.544c135.939,0 210.268,-112.643 210.268,-210.268c0,-3.218 0,-6.437 -0.153,-9.502c14.406,-10.421 26.973,-23.448 36.935,-38.314c-13.18,5.824 -27.433,9.809 -42.452,11.648c15.326,-9.196 26.973,-23.602 32.49,-40.92c-14.252,8.429 -30.038,14.56 -46.896,17.931c-13.487,-14.406 -32.644,-23.295 -53.946,-23.295c-40.767,0 -73.87,33.104 -73.87,73.87c0,5.824 0.613,11.494 1.992,16.858c-61.456,-3.065 -115.862,-32.49 -152.337,-77.241c-6.284,10.881 -9.962,23.601 -9.962,37.088c0,25.594 13.027,48.276 32.95,61.456c-12.107,-0.307 -23.448,-3.678 -33.41,-9.196l0,0.92c0,35.862 25.441,65.594 59.311,72.49c-6.13,1.686 -12.72,2.606 -19.464,2.606c-4.751,0 -9.348,-0.46 -13.946,-1.38c9.349,29.426 36.628,50.728 68.965,51.341c-25.287,19.771 -57.164,31.571 -91.8,31.571c-5.977,0 -11.801,-0.306 -17.625,-1.073c32.337,21.15 71.264,33.41 112.95,33.41Z" />

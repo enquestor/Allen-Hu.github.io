@@ -29,7 +29,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://yagami.dev/tags/%E5%BF%83%E6%83%85%E9%9B%9C%E8%AB%87/" />
-<meta property="og:updated_time" content="2021-01-03T13:00:15+08:00" />
+<meta property="og:updated_time" content="2021-01-01T00:00:00+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="心情雜談"/>
 <meta name="twitter:description" content=""/>
@@ -119,31 +119,6 @@
 
 
 
-<article class="post-entry tag-entry"> 
-
-  <header class="entry-header">
-    <h2>
-      為什麼我不做資料分析師
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>所以說，我以後絕對不做資料分析師。
-前情提要 這學期 R 語言期末 Project 本來想做「清交二手拍盤子價與市場價格差距比例和被噴的次數是否程正相關」，但由於實在是懶得用一個不習慣的語言寫抓 Facebook 留言 &#43; 爬市場價格的 code，最後還是放棄了。
-去了政府的 開放資料網站 逛了逛資料集，各校退學人數 吸引了我的注意。
-剛好前不久遇到了台大5天3自殺的案件，想到常在 Facebook 上看到文章談論頂大學生壓力大的問題，於是決定用退學資料做分析。
-定義問題 在做資料分析時，非常重要的一點是定義問題。
-這邊問題倒是很明確，我會如此定義：「學校 QS 排名與退學人數是否有相關性」
-這裡最大的問題是，退學人數與壓力大倒也不是直接相關。或許有些人因為不想退學，因此加倍努力導致壓力更大。於是索性直接做排名跟退學人數的相關性了 XD
-分析過程 Pre-Process load 需要用到的 package
-library(ggplot2) library(dplyr) 整理學校排名的 data.frame
-# School Ranking ranked_schools &lt;- read.csv(&#34;ranking.csv&#34;) ranked_schools_process &lt;- function(ranked_schools) { # format rank number ranked_schools[&#34;rank&#34;] &lt;- lapply(ranked_schools[&#34;rank&#34;], function(x) as.numeric((regmatches(x,regexpr(&#34;[0-9]*$&#34;, x))))) # format school name ranked_schools[&#34;title&#34;] &lt;- c(&#34;國立臺灣大學&#34;, &#34;國立清華大學&#34;, &#34;國立成功大學&#34;, &#34;國立交通大學&#34;, &#34;國立臺灣科技大學&#34;, &#34;國立陽明大學&#34;, &#34;國立臺灣師範大學&#34;, &#34;臺北醫學大學&#34;, &#34;國立中山大學&#34;, &#34;國立中央大學&#34;, &#34;國立臺北科技大學&#34;, &#34;長庚大學&#34;, &#34;國立政治大學&#34;, &#34;國立中興大學&#34;, &#34;高雄醫學大學&#34;, &#34;國立中正大學&#34;) # remove unused column ranked_schools[&#34;detailPage&#34;] &lt;- NULL ranked_schools } # pre-process ranked_schools ranked_schools &lt;- ranked_schools_process(ranked_schools) 整理退學資料：...</p>
-  </section>
-  <footer class="entry-footer">
-
-January 3, 2021&nbsp;·&nbsp;4 分鐘&nbsp;·&nbsp;Yagami
-</footer>
-  <a class="entry-link" aria-label="post link to 為什麼我不做資料分析師" href="https://yagami.dev/posts/2_why_not_data_analyst/"></a>
-</article>
 <article class="post-entry tag-entry"> 
 <figure class="entry-cover"><img src="https://yagami.dev/1/1_cover.png" alt="">
 </figure>
