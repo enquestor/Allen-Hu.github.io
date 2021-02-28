@@ -11,7 +11,7 @@
 <meta name="description" content="">
 <meta name="author" content="Yagami">
 <link rel="canonical" href="https://yagami.dev/tags/%E5%BF%83%E6%83%85%E9%9B%9C%E8%AB%87/" />
-<link href="https://yagami.dev/assets/css/stylesheet.min.d1bc2b736056bd5698d770eeedc08a73bce9e6cebb30810f6f1b2c2048e46ab8.css" integrity="sha256-0bwrc2BWvVaY13Du7cCKc7zp5s67MIEPbxssIEjkarg=" rel="preload stylesheet"
+<link href="/assets/css/stylesheet.min.0e4a1b49e740c28140e9ee4945aab2f86cb0a7bfbf5a5d612d0cb5df7d6141f4.css" integrity="sha256-DkobSedAwoFA6e5JRaqy&#43;Gywp7&#43;/Wl1hLQy1331hQfQ=" rel="preload stylesheet"
     as="style">
 
 <link rel="icon" href="https://yagami.dev/favicon.ico">
@@ -38,7 +38,7 @@
 
 </head>
 
-<body class="list">
+<body class="list" id="top">
 <script>
     if (localStorage.getItem("pref-theme") === "dark") {
         document.body.classList.add('dark');
@@ -51,7 +51,7 @@
 </script>
 <noscript>
     <style type="text/css">
-        .theme-toggle,
+        #theme-toggle,
         .top-link {
             display: none;
         }
@@ -63,32 +63,31 @@
         <div class="logo">
             <a href="https://yagami.dev" accesskey="h" title="Yagami 幹話語錄 (Alt + H)">Yagami 幹話語錄</a>
             <span class="logo-switches">
-                <span class="theme-toggle" title="(Alt + T)">
-                    <a id="theme-toggle" accesskey="t">
-                        <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                            stroke-linejoin="round">
-                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                        </svg>
-                        <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                            stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="5"></circle>
-                            <line x1="12" y1="1" x2="12" y2="3"></line>
-                            <line x1="12" y1="21" x2="12" y2="23"></line>
-                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                            <line x1="1" y1="12" x2="3" y2="12"></line>
-                            <line x1="21" y1="12" x2="23" y2="12"></line>
-                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                        </svg>
-                    </a>
-                </span>
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                
                 
             </span>
         </div>
-        <ul class="menu" id="menu" onscroll="menu_on_scroll()">
+        <ul id="menu" onscroll="menu_on_scroll()">
             <li>
                 <a href="https://yagami.dev/tags/" title="分類">
                     <span>分類</span>
@@ -114,8 +113,11 @@
 
     <main class="main"> 
 <header class="page-header">
+
   <h1>心情雜談</h1>
 </header>
+
+
 
 
 
@@ -170,6 +172,7 @@ February 28, 2021&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;Yagami
 </footer>
   <a class="entry-link" aria-label="post link to 再見了，資財營" href="https://yagami.dev/posts/3_farewell_imfcamp/"></a>
 </article>
+
 <article class="post-entry tag-entry"> 
 <figure class="entry-cover"><img src="https://i.imgur.com/negefE1.jpg" alt="">
 </figure>
@@ -199,10 +202,13 @@ January 1, 2021&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;Yagami
     <span>&middot;</span>
     <span>Theme <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a></span>
 </footer>
-<button class="top-link" id="top-link" type="button" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6">
-        <path d="M12 6H0l6-6z" /></svg>
-</button>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)">
+    <button class="top-link" id="top-link" type="button" accesskey="g">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+            <path d="M12 6H0l6-6z" />
+        </svg>
+    </button>
+</a>
 
 
 
@@ -212,6 +218,24 @@ January 1, 2021&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;Yagami
             document.getElementById('menu').scrollLeft = localStorage.getItem("menu-scroll-position");
         }
     }
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
     var mybutton = document.getElementById("top-link");
     window.onscroll = function () {
         if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
@@ -222,11 +246,6 @@ January 1, 2021&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;Yagami
             mybutton.style.opacity = "0";
         }
     };
-    mybutton.onclick = function () {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-        window.location.hash = ''
-    }
 
     function menu_on_scroll() {
         localStorage.setItem("menu-scroll-position", document.getElementById('menu').scrollLeft);
