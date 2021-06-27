@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Yagami 幹話語錄</title>
     <link>https://yagami.dev/</link>
@@ -96,23 +96,7 @@ library(ggplot2) library(dplyr) 整理學校排名的 data.frame
 在 OS 期末考跟微處理機期末 Project、R 語言作業、編譯器作業跟托福的炎燒下，就不說太多了。關於我的部分，也就等 1/16 忙完營隊後再說吧。</description>
     </item>
     
-    <item>
-      <title>搜尋</title>
-      <link>https://yagami.dev/search/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://yagami.dev/search/</guid>
-      <description></description>
-    </item>
     
-    <item>
-      <title>時間軸</title>
-      <link>https://yagami.dev/archives/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://yagami.dev/archives/</guid>
-      <description>archives</description>
-    </item>
     
   </channel>
 </rss>

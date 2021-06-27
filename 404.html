@@ -6,14 +6,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>404 Page not found | Yagami 幹話語錄</title>
-
 <meta name="keywords" content="" />
 <meta name="description" content="">
 <meta name="author" content="Yagami">
 <link rel="canonical" href="https://yagami.dev/404.html" />
-<link href="/assets/css/stylesheet.min.0e4a1b49e740c28140e9ee4945aab2f86cb0a7bfbf5a5d612d0cb5df7d6141f4.css" integrity="sha256-DkobSedAwoFA6e5JRaqy&#43;Gywp7&#43;/Wl1hLQy1331hQfQ=" rel="preload stylesheet"
-    as="style">
-
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.35cd0f65a15cafa92372b8313deef5960aae04b90ad722f2bbf509eb0468137e.css" integrity="sha256-Nc0PZaFcr6kjcrgxPe71lgquBLkK1yLyu/UJ6wRoE34=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://yagami.dev/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://yagami.dev/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://yagami.dev/favicon-32x32.png">
@@ -21,9 +18,7 @@
 <link rel="mask-icon" href="https://yagami.dev/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.79.1" />
-
-
+<meta name="generator" content="Hugo 0.84.1" />
 <meta property="og:title" content="404 Page not found" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
@@ -32,8 +27,6 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="404 Page not found"/>
 <meta name="twitter:description" content=""/>
-
-
 
 </head>
 
@@ -56,7 +49,36 @@
         }
 
     </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: #1d1e20;
+                --entry: #2e2e33;
+                --primary: rgba(255, 255, 255, 0.84);
+                --secondary: rgba(255, 255, 255, 0.56);
+                --tertiary: rgba(255, 255, 255, 0.16);
+                --content: rgba(255, 255, 255, 0.74);
+                --hljs-bg: #2e2e33;
+                --code-bg: #37383e;
+                --border: #333;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
 </noscript>
+
 <header class="header">
     <nav class="nav">
         <div class="logo">
@@ -82,11 +104,9 @@
                         <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                     </svg>
                 </button>
-                
-                
             </span>
         </div>
-        <ul id="menu" onscroll="menu_on_scroll()">
+        <ul id="menu">
             <li>
                 <a href="https://yagami.dev/tags/" title="分類">
                     <span>分類</span>
@@ -106,19 +126,20 @@
                 <a href="https://yagami.dev/about/" title="關於我">
                     <span>關於我</span>
                 </a>
-            </li></ul>
+            </li>
+        </ul>
     </nav>
 </header>
-
-    <main class="main">
+<main class="main">
 <div class="not-found">404</div>
-
-    </main><footer class="footer">
+    </main>
+    <footer class="footer">
     <span>&copy; 2021 <a href="https://yagami.dev">Yagami 幹話語錄</a></span>
-    <span>&middot;</span>
-    <span>Powered by <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a></span>
-    <span>&middot;</span>
-    <span>Theme <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
 </footer>
 <a href="#top" aria-label="go to top" title="Go to Top (Alt + G)">
     <button class="top-link" id="top-link" type="button" accesskey="g">
@@ -128,14 +149,13 @@
     </button>
 </a>
 
-
-
 <script>
-    window.onload = function () {
-        if (localStorage.getItem("menu-scroll-position")) {
-            document.getElementById('menu').scrollLeft = localStorage.getItem("menu-scroll-position");
-        }
+    let menu = document.getElementById('menu')
+    menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+    menu.onscroll = function () {
+        localStorage.setItem("menu-scroll-position", menu.scrollLeft);
     }
+
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener("click", function (e) {
             e.preventDefault();
@@ -154,6 +174,9 @@
             }
         });
     });
+
+</script>
+<script>
     var mybutton = document.getElementById("top-link");
     window.onscroll = function () {
         if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
@@ -164,10 +187,6 @@
             mybutton.style.opacity = "0";
         }
     };
-
-    function menu_on_scroll() {
-        localStorage.setItem("menu-scroll-position", document.getElementById('menu').scrollLeft);
-    }
 
 </script>
 <script>
@@ -182,7 +201,6 @@
     })
 
 </script>
-
 </body>
 
 </html>
